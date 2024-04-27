@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json.schemastore.org/stylelintrc",
+  "customSyntax": "postcss-styled-syntax",
+  "defaultSeverity": "error",
+  "extends": "stylelint-config-standard",
+  "plugins": ["stylelint-react-native"],
+  "rules": {
+    "react-native/font-weight-no-ignored-values": true,
+    "react-native/css-property-no-unknown": true
+  }
+}
