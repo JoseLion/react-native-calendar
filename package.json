@@ -1,0 +1,54 @@
+{
+  "name": "react-native-calendar",
+  "version": "1.0.0",
+  "private": true,
+  "main": "./src/main.ts",
+  "engines": {
+    "node": ">=21.0.0"
+  },
+  "scripts": {
+    "android": "expo start --android",
+    "compile": "tsc",
+    "check": "yarn compile && yarn lint && yarn stylelint",
+    "ios": "expo start --ios",
+    "lint": "eslint . --report-unused-disable-directives",
+    "start": "expo start",
+    "stylelint": "stylelint \"**/*.ts?(x)\" --report-needless-disables",
+    "web": "expo start --web"
+  },
+  "packageManager": "yarn@4.1.1",
+  "dependencies": {
+    "expo": "~50.0.17",
+    "expo-status-bar": "~1.11.1",
+    "react": "18.2.0",
+    "react-fast-compare": "^3.2.2",
+    "react-native": "0.73.6",
+    "styled-components": "^6.1.8"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.24.4",
+    "@types/node": "^20.12.7",
+    "@types/react": "~18.2.45",
+    "@typescript-eslint/eslint-plugin": "^7.7.1",
+    "@typescript-eslint/parser": "^7.7.1",
+    "eslint": "^8.57.0",
+    "eslint-import-resolver-typescript": "^3.6.1",
+    "eslint-plugin-better-styled-components": "^1.1.2",
+    "eslint-plugin-etc": "^2.0.3",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-jsdoc": "^48.2.3",
+    "eslint-plugin-react": "^7.34.1",
+    "eslint-plugin-react-hooks": "^4.6.2",
+    "eslint-plugin-react-native": "^4.1.0",
+    "eslint-plugin-sonarjs": "^0.25.1",
+    "postcss": "^8.4.38",
+    "postcss-styled-syntax": "^0.6.4",
+    "stylelint": "^16.4.0",
+    "stylelint-config-standard": "^36.0.0",
+    "stylelint-react-native": "^2.7.0",
+    "ts-node": "^10.9.2",
+    "tslib": "^2.6.2",
+    "typescript": "^5.4.5",
+    "yarn": "^1.22.22"
+  }
+}
