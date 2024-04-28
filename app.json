@@ -14,6 +14,7 @@
     "assetBundlePatterns": [
       "**/*"
     ],
+    "platforms": ["android", "ios"],
     "ios": {
       "supportsTablet": true
     },
@@ -25,6 +26,9 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      ["expo-font", { "fonts": ["./assets/fonts/Poppins-Medium.ttf"] }]
+    ]
   }
 }
