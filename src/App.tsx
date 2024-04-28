@@ -1,25 +1,35 @@
+import { useFonts } from "expo-font";
+import { preventAutoHideAsync, hideAsync } from "expo-splash-screen";
 import { StatusBar } from "expo-status-bar";
-import { ReactElement, memo } from "react";
+import { ReactElement, memo, useCallback } from "react";
 import isEqual from "react-fast-compare";
-import styled from "styled-components/native";
 
-const Container = styled.View`
-  align-items: center;
-  background-color: #030303;
-  color: #fff;
-  flex: 1;
-  justify-content: center;
-`;
+import Poppins from "../assets/fonts/Poppins-Medium.ttf";
 
-const Message = styled.Text`
-  color: white;
-`;
+import { CalendarTitle, MainContainer } from "./App.styles";
+import { Calendar } from "./components/calendar/Calendar.component";
 
-export const App = memo((): ReactElement => {
+preventAutoHideAsync();
+
+export const App = memo((): Nullable<ReactElement> => {
+  const [fontsReady, fontsError] = useFonts({ Poppins });
+
+  const loadStyles = useCallback((): void => {
+    if (fontsReady || fontsError) {
+      hideAsync();
+    }
+  }, [fontsReady, fontsError]);
+
+  if (!fontsReady && !fontsError) {
+    return null;
+  }
+
   return (
-    <Container>
-      <Message>{"Open up App.js to start working on your app!"}</Message>
+    <MainContainer onLayout={loadStyles}>
       <StatusBar style="auto" />
-    </Container>
+
+      <CalendarTitle>{"Calendar"}</CalendarTitle>
+      <Calendar />
+    </MainContainer>
   );
 }, isEqual);

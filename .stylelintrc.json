@@ -5,6 +5,9 @@
   "extends": "stylelint-config-standard",
   "plugins": ["stylelint-react-native"],
   "rules": {
+    "alpha-value-notation": "number",
+    "declaration-block-no-redundant-longhand-properties": null,
+    "font-family-no-missing-generic-family-keyword": null,
     "react-native/font-weight-no-ignored-values": true,
     "react-native/css-property-no-unknown": true
   }
